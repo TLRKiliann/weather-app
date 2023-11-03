@@ -3,7 +3,7 @@ export default function AlertSection() {
   return (
     <section className="mainalert">
 
-        <h1>Alert</h1>
+        <h2>Alert</h2>
 
     </section>
   )

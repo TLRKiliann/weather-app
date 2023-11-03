@@ -1,10 +1,12 @@
 @import './App.scss';
-@import './components/styles/AlertSection.scss';
-@import './components/styles/DataWeather.scss';
-@import './components/styles/DateHour.scss';
-@import './components/styles/EmailSender.scss';
-@import './components/styles/SonarStorm.scss';
-@import './components/styles/LineChart.scss';
+@import './styles/_mixin.scss';
+@import './styles/_colors.scss';
+@import './components/styles/_AlertSection.scss';
+@import './components/styles/_DataWeather.scss';
+@import './components/styles/_DateHour.scss';
+@import './components/styles/_EmailSender.scss';
+@import './components/styles/_SonarStorm.scss';
+@import './components/styles/_LineChart.scss';
 
 :root {
   font-family: Helvetica, Arial, sans-serif;
@@ -25,10 +27,35 @@ body {
   box-sizing: border-box;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+
+  background-color: rgba(0,0,0, 0.5);
+}
+
 h1 {
   text-align: center;
   font-size: 2.2rem;
   margin: auto;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+
+  background-color: rgba(0,0,0, 0.5);
+  color: #f5f5f5;
 }
 
 p {

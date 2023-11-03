@@ -11,20 +11,20 @@ function App() {
   return (
     <>
       
-      <div className='maintitle'>
+      <header className='maintitle'>
         <h1 className='maintitle--h1'>Weather in real time</h1>
-      </div>
-
+      </header>
+      <hr />
       <DateHour />
 
       <LineChart />
 
       <DataWeather />
-
+      <hr />
       <AlertSection />
-
+      <hr />
       <SonarStorm />
-
+      <hr />
       <EmailSender />
 
     </>
