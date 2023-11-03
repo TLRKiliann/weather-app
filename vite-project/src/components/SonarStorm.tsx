@@ -1,4 +1,3 @@
-import './styles/SonarStorm.css'
 
 export default function SonarStorm() {
   return (

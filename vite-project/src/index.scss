@@ -1,3 +1,11 @@
+@import './App.scss';
+@import './components/styles/AlertSection.scss';
+@import './components/styles/DataWeather.scss';
+@import './components/styles/DateHour.scss';
+@import './components/styles/EmailSender.scss';
+@import './components/styles/SonarStorm.scss';
+@import './components/styles/LineChart.scss';
+
 :root {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;

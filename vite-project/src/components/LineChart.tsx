@@ -9,7 +9,6 @@ import {
     Legend,
   } from 'chart.js';
   import { Line } from 'react-chartjs-2';
-  import './styles/LineChart.css'
   
   ChartJS.register(
     CategoryScale,

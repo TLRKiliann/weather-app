@@ -4,7 +4,7 @@ import DataWeather from './components/DataWeather'
 import AlertSection from './components/AlertSection'
 import SonarStorm from './components/SonarStorm'
 import EmailSender from './components/EmailSender'
-import './App.css'
+
 
 function App() {
 

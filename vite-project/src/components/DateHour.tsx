@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './styles/DateHour.css'
 
 export default function DateHour() {
     

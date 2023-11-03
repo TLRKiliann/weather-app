@@ -1,4 +1,3 @@
-import './styles/EmailSender.css'
 
 export default function EmailSender() {
   return (

@@ -1,4 +1,3 @@
-import './styles/AlertSection.css'
 
 export default function AlertSection() {
   return (

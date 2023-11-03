@@ -1,4 +1,3 @@
-import './styles/DataWeather.css'
 
 export default function DataWeather() {
   return (
