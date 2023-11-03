@@ -1,0 +1,14 @@
+.maintitle {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+.maintitle--h1 {
+    color: #f5f5f5;
+    text-shadow: 5px 0px 1px #808080;
+
+    background-color: #000;
+
+    padding: 20px 0px;
+}
