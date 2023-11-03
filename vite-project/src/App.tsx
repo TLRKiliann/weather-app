@@ -1,5 +1,9 @@
 import DateHour from './components/DateHour'
 import LineChart from "./components/LineChart"
+import DataWeather from './components/DataWeather'
+import AlertSection from './components/AlertSection'
+import SonarStorm from './components/SonarStorm'
+import EmailSender from './components/EmailSender'
 import './App.css'
 
 function App() {
@@ -13,11 +17,15 @@ function App() {
 
       <DateHour />
 
-      <div>
-        <LineChart />
+      <LineChart />
 
-        <LineChart />
-      </div>
+      <DataWeather />
+
+      <AlertSection />
+
+      <SonarStorm />
+
+      <EmailSender />
 
     </>
   )

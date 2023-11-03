@@ -17,7 +17,6 @@ export default function DateHour() {
     }, [])
 
     return (
-
         <section className="time">
 
             <div className="time--div">
