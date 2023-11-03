@@ -1,11 +1,15 @@
 .email {
     height: 400px;
-    border-radius: 7px 7px 0px 0px;
+
+    border: 1px solid white;
+
+    border-radius: 7px;
+    margin-bottom: 40px;
 }
 
 .submit--form {
     display: flex;
     flex-direction: column;
-
+    border: 1px solid white;
     color: #333;
 }

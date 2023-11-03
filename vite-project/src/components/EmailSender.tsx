@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import submitForm from './SubmitForm'
 
 export default function EmailSender() {
   
@@ -31,7 +32,7 @@ export default function EmailSender() {
       console.log(textMsg)
       setStatus('submitted')
       try {
-        //await submitForm(fullname, email, textMsg)
+        await submitForm({fullname, email, textMsg})
         setStatus('success')
       } catch (err: unknown | null) {
         setStatus('typing')
@@ -39,40 +40,40 @@ export default function EmailSender() {
       }
   }
 
-
   return (
     <section className='email'>
-      
-      <h2>email</h2>
+      <div>
+        <h2>email</h2>
 
-      <form onSubmit={(e) => handleSubmit(e, fullname, email, textMsg)}
-        className='submit--form'>
+        <form 
+          onSubmit={(e) => handleSubmit(e, fullname, email, textMsg)}
+          className='submit--form'>
 
-        <label htmlFor=""></label>
-        <input type="text" value={fullname} onChange={(e) => handleChangeName(e)} />
+          <label htmlFor=""></label>
+          <input type="text" value={fullname} onChange={(e) => handleChangeName(e)} />
 
-        <label htmlFor=""></label>
-        <input type="email" value={email} onChange={(e) => handleChangeEmail(e)} />
+          <label htmlFor=""></label>
+          <input type="email" value={email} onChange={(e) => handleChangeEmail(e)} />
 
-        <textarea
-          id="textarea"
-          name="textarea" 
-          value={textMsg}
-          onChange={(e) => handleTextarea(e)}
-          cols={80} rows={10} 
-          placeholder="email" 
-        />
-      
-        <button type="submit">Send</button>
+          <textarea
+            id="textarea"
+            name="textarea" 
+            value={textMsg}
+            onChange={(e) => handleTextarea(e)}
+            cols={80} rows={10} 
+            placeholder="email" 
+          />
+        
+          <button type="submit">Send</button>
 
-      </form>
+        </form>
 
-      {error !== null ? (
-        <p>{error?.message}</p>
-      ):(
-        null
-      )}
-
+        {error !== null ? (
+          <p>{error?.message}</p>
+        ):(
+          null
+        )}
+      </div>
     </section>
   )
 }
