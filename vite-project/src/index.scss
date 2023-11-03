@@ -1,4 +1,4 @@
-@import './App.scss';
+@import './_App.scss';
 @import './styles/_mixin.scss';
 @import './styles/_colors.scss';
 @import './components/styles/_AlertSection.scss';
@@ -33,7 +33,7 @@ header {
   right: 0px;
   left: 0px;
   
-  background-color: rgba(0, 70, 250, 0.7);
+  background-color: rgba(0, 70, 250, 0.5);
   box-shadow: 0px 0px 7px #f5f5f5;
 }
 
@@ -52,7 +52,8 @@ section {
   margin: auto;
   padding: 20px;
 
-  background-color: rgba(0, 70, 250, 0.7);
+  background-color: rgba(0, 70, 250, 0.5);
+  box-shadow: 0px 0px 7px #f5f5f5;
   color: #f5f5f5;
 }
 
@@ -69,6 +70,6 @@ footer {
   
   text-align: center;
 
-  background-color: rgba(0, 70, 250, 0.7);
+  background-color: rgba(0, 70, 250, 0.5);
   box-shadow: 0px 0px 7px #f5f5f5;
 }

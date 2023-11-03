@@ -1,15 +1,49 @@
 .email {
-    height: 400px;
-
-    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
 
     border-radius: 7px;
     margin-bottom: 40px;
-}
+    &--title {
+        width: 100%;
+    }
+    &--divform {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60%;
+            color: #333;
+            &--label {
+                width: 50%;
+                background-color: rgba(0,0,0, 0.5);
+                color: #f5f5f5;
+                margin: auto;
+                margin-bottom: 10px;
+                padding: 7px 10px;
+            }
+            &--input {
+                width: 50%;
+                margin: auto;
+                margin-bottom: 10px;
+                padding: 7px 10px;
+            }
+            &--textarea {
+                width: 50%;
+                margin: auto;
+                font-size: 1.0rem;
 
-.submit--form {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid white;
-    color: #333;
+                padding: 10px;
+            }
+            &--btn {
+                width: 53%;
+                margin: 10px auto;
+                padding: 10px;
+
+            }
+        }
+    }
 }
