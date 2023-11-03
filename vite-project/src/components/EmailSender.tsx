@@ -86,13 +86,15 @@ export default function EmailSender() {
         
           <button type="submit" className='form--btn'>Send</button>
 
-        </form>
+          <span className='form--error'>
+            {error !== null ? (
+              <p>{error?.message}</p>
+            ):(
+              null
+            )}
+          </span>
 
-        {error !== null ? (
-          <p>{error?.message}</p>
-        ):(
-          null
-        )}
+        </form>
       </div>
     </section>
   )
