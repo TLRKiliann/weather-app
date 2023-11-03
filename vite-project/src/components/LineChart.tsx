@@ -20,8 +20,8 @@ import {
     Legend
   );
   
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'september', 'october', 'november', 'december'];
   
   export const options = {
     responsive: true,
@@ -34,7 +34,7 @@ import {
       title: {
         display: true,
         text: 'Températures & Anémométrie',
-        color: "yellow"
+        color: "#333"
       },
     },
   };
@@ -44,13 +44,13 @@ import {
     datasets: [
       {
         label: 'Temperatures C°',
-        data: [1,2,3,4,5,6],
+        data: [10,7,10,4,14,6],
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
         label: 'Wind',
-        data: [3,4,7,8,10,11],
+        data: [9, 7, 11, 16, 10, 11],
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
