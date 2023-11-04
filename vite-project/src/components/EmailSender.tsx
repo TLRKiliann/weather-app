@@ -81,7 +81,7 @@ export default function EmailSender() {
             value={textMsg}
             onChange={(e) => handleTextarea(e)}
             cols={80} rows={10} 
-            placeholder="email" 
+            placeholder="Leave a comment..." 
           />
         
           <button type="submit" className='form--btn'>Send</button>

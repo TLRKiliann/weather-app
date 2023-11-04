@@ -30,31 +30,69 @@ import {
       legend: {
         position: 'top' as const,
         labels: {
-          color: "#f5f5f5"
+          color: "sandybrown",
+          font: {
+            size: 14
+          }
         },
       },
       title: {
         display: true,
-        text: 'Températures & Anémométrie',
-        color: "#f5f5f5"
+        text: 'Temperatures & Wind',
+        color: "sandybrown",
+        font: {
+          size: 22
+        }
       },
     },
+    scales: {
+      x: {
+        grid:{
+          color: 'magenta',
+        },
+        border: {
+          dash: [2,4],
+        },  
+        ticks: {
+          display: true,
+          color: "sandybrown"
+        }
+      },
+      y: {
+        grid: {
+          color: 'magenta',
+        },
+        border: {
+          dash: [2,4],
+        }, 
+        ticks: {
+          display: true,
+          color: "sandybrown",
+        }
+      }
+    }
   };
   
   export const data = {
     labels,
     datasets: [
       {
-        label: 'Temperatures C°',
+        label: 'Temperatures(C°)',
         data: [10,7,10,4,14,6],
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.3)',
+        pointBorderColor: 'salmon',
+        pointBackgroundColor: 'salmon',
+        borderWidth: 2,
       },
       {
         label: 'Wind',
         data: [9, 7, 11, 16, 10, 11],
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.3)',
+        pointBorderColor: 'deepskyblue',
+        pointBackgroundColor: 'deepskyblue',
+        borderWidth: 2
       },
     ],
   };

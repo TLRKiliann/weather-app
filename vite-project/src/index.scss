@@ -13,7 +13,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
 
-  color: #f5f5f5;
+  color: $whitesmoke;
   background: deepskyblue;
 
   text-rendering: optimizeLegibility;
@@ -34,8 +34,8 @@ header {
   right: 0px;
   left: 0px;
   
-  background-color: rgba(245, 166, 97, 0.5);
-  box-shadow: 0px 0px 7px sandybrown;
+  background-color: $light--sandybrown;
+  box-shadow: 0px 0px 7px $sandybrown;
 }
 
 h1 {
@@ -53,7 +53,7 @@ section {
   margin: auto;
   padding: 20px;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $black--opacity;
 }
 
 p {
@@ -69,8 +69,8 @@ footer {
   display: flex;
   justify-content: center;
 
-  background-color: rgba(245, 166, 97, 0.5);
-  box-shadow: 0px 0px 4px sandybrown;
+  background-color: $light--sandybrown;
+  box-shadow: 0px 0px 4px $sandybrown;
   padding: 10px 0px;
   .apilogo {
     width: 10%;

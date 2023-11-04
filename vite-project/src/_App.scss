@@ -1,3 +1,5 @@
+@use 'src/styles/colors' as *;
+
 .img--span {
     position: fixed;
     top: 0px;
@@ -17,8 +19,8 @@
 
 .maintitle { 
     &--h1 {
-        color: #f5f5f5;
-        text-shadow: 5px 0px 1px #808080;
+        color: $whitesmoke;
+        text-shadow: 5px 0px 1px $grey;
 
         padding: 20px 0px;
     }

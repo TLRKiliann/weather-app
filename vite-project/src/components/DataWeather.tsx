@@ -36,8 +36,7 @@ export default function DataWeather() {
 
   console.log(data, "data")
 
-  const api_url_2 = "https://api.weatherapi.com/v1"
-  const api_key_2 = "f9cc795ef9de4a8182590531230411"
+
 
   useEffect(() => {
     if (loading === true) {
