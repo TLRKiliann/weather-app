@@ -46,7 +46,7 @@ export default function Weather({weatherData}: WeatherProps) {
                             className="forecast--img"
                         />
                     </span>
-                    <p className="forecast--uv">UV Index: {weatherData.current.uv}</p>
+                    <p className="forecast--uv">UV: {weatherData.current.uv}</p>
                 </div>
 
             </div>

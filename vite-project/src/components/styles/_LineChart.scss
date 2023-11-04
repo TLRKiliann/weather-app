@@ -1,15 +1,34 @@
-/*
 .lineChart {
-}
-*/
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    &--div {
+        width: 100%;
+        height: 400px;
+    
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(245, 166, 97, 0.55);
+    }
+    &--span {
+        margin-top: 20px;
+        
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(245, 166, 97, 0.55);
+        border-radius: 7px;
+        color: sandybrown;
 
-.lineChart--div {
-    width: 100%;
-    height: 400px;
-
-    background-color: whitesmoke;
-    border: 1px solid red;
-
-    margin: 20px;
-    padding: 20px;
+        padding: 10px 30px;
+        transition: ease 0.5s;
+        a {
+            text-decoration: none;
+            color: sandybrown; 
+        }
+        &:hover {
+            background: sandybrown;
+            a {
+                text-decoration: none;
+                color: #424242; 
+            }
+        }
+    }
 }
