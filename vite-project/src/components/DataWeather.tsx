@@ -1,65 +1,66 @@
 import { useEffect, useState } from "react";
 import Weather from './Weather';
 
-/*type LongLat = {
-  latitude: number;
-  longitude: number;
-}
-
-type LittleLatLongProps = {
-  coords: LongLat;
-}
-
-type LongLatProps = {
-  position: LittleLatLongProps;
-}*/
-
 type DataProps = {
-  weather: {description: string}[];
-  name: string;
-  main: any;
-  sys: {
-    sunrise: string;
-    sunset: string;
+  location: {
+    name: string;
+    country: string;
   }
+  current: {
+    temp_c: number;
+    feelslike_c: number;
+    wind_dir: number;
+    wind_kph: number;
+    wind_degree: number;
+    humidity: number;
+    precip_mm: number;
+    pressure_mb: number;
+    uv: number;
+    air_quality: {
+        co: number;
+        no2: number;
+        o3: number;
+        so2: number;
+    }
+    condition: {
+      text: string;
+      icon: string;
+    }
+  };
 }
 
 export default function DataWeather() {
-  
-  //const [lat, setLat] = useState<LongLatProps| number>(0);
-  //const [long, setLong] = useState<LongLatProps | number>(0);
+
   const [data, setData] = useState<DataProps>();
-  
+  const [loading, setLoading] = useState<boolean>(true)
+
   console.log(data, "data")
 
-  const api_url = process.env.REACT_APP_API_URL as string;
-  const api_key = process.env.REACT_APP_API_KEY as string;
+  const api_url_2 = "https://api.weatherapi.com/v1"
+  const api_key_2 = "f9cc795ef9de4a8182590531230411"
 
   useEffect(() => {
-    const fetchData = () => {
-      // navigator.geolocation.getCurrentPosition(function(position) {
-        
-      //   setLat(position.coords.latitude);
-      //   setLong(position.coords.longitude);
-        
-      // });
-      fetch(`${api_url}/weather/?q=Lausanne&appid=${api_key}&units=metric`)
-      .then((res) => res.json())
-      .then((result) => {
-        setData(result)
-        console.log(result);
-      })
+    if (loading === true) {
+      const fetchData = async() => {
+        await fetch(`${api_url_2}/current.json?key=${api_key_2}&q=Lausanne&aqi=yes`)
+        .then((res) => res.json())
+        .then((rslt) => {
+          setData(rslt)
+          console.log(rslt)
+          setLoading(false)
+        })
+      }
+      fetchData();
     }
-    fetchData();
   }, [])
 
   return (
-    <section className='dataweather'>
+    <section className='dataweather--section'>
 
-      {(typeof data?.main != 'undefined') ? (
+      {(typeof data?.location != 'undefined') ? (
         <Weather weatherData={data} />
       ): (
-        <div></div>
+        <div>No response from API</div>
       )}
 
     </section>

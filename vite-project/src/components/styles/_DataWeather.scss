@@ -1,9 +1,6 @@
-.dataweather {
-    border-radius: 7px;
-}
-
-.dataweather--div {
+.dataweather--section {
     display: flex;
     flex-direction: column;
-
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.5);
 }

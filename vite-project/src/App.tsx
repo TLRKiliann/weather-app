@@ -5,7 +5,7 @@ import AlertSection from './components/AlertSection'
 import SonarStorm from './components/SonarStorm'
 import EmailSender from './components/EmailSender'
 import meteo from '/images/meteo.jpg'
-
+import apiLogo from '/images/weatherapi_logo.jpg'
 
 function App() {
 
@@ -22,14 +22,14 @@ function App() {
       </span>
 
       <header className='maintitle'>
-        <h1 className='maintitle--h1'>Weather in real time</h1>
+        <h1 className='maintitle--h1'>Weather in Lausanne</h1>
       </header>
       
       <DateHour />
       <hr />
-      <LineChart />
-      <hr />
       <DataWeather />
+      <hr />
+      <LineChart />
       <hr />
       <AlertSection />
       <hr />
@@ -38,7 +38,14 @@ function App() {
       <EmailSender />
 
       <footer>
-        <p>cat.3st3ban@gmail.com</p>
+        <span className='apilogo'>
+          <img 
+            src={apiLogo} 
+            width="100%"
+            height="100%"
+            alt="logo of API"
+            className='apilogo--img' />
+        </span>
       </footer>
 
     </>
