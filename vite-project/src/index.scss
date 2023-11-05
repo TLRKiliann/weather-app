@@ -34,8 +34,8 @@ header {
   right: 0px;
   left: 0px;
   
-  background-color: $light--sandybrown;
-  box-shadow: 0px 0px 7px $sandybrown;
+  background-color: $black--light--opacity;
+  box-shadow: 0px 0px 7px $light--sandybrown;
 }
 
 h1 {
@@ -69,8 +69,8 @@ footer {
   display: flex;
   justify-content: center;
 
-  background-color: $light--sandybrown;
-  box-shadow: 0px 0px 4px $sandybrown;
+  background-color: $black--light--opacity;
+  box-shadow: 0px 0px 7px $light--sandybrown;
   padding: 10px 0px;
   .apilogo {
     width: 10%;

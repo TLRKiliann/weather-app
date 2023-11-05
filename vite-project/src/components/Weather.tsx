@@ -1,3 +1,9 @@
+import { FaTemperatureHigh } from "react-icons/fa";
+import { BiCurrentLocation } from "react-icons/bi";
+
+import { GiWindTurbine, GiWindsock } from "react-icons/gi"
+import { BsCloudRain } from "react-icons/bs"
+
 type LittleDataProps = {
     location: {
         name: string;
@@ -54,29 +60,29 @@ export default function Weather({weatherData}: WeatherProps) {
             <div className="dataweather">
 
                 <div className='dataweather--div'>
-                    <h3>Location</h3>
+                    <h3>Location&nbsp;<BiCurrentLocation size={24} /></h3>
                     <p>City: {weatherData.location.name}</p>
                     <p>Country: {weatherData.location.country}</p>
-                    <p>Temperature(°C): {weatherData.current.temp_c}°</p>
-                    <p>Feels like: {weatherData.current.feelslike_c}°</p>
+                    <p><FaTemperatureHigh />: {weatherData.current.temp_c}°C</p>
+                    <p>Feels like: {weatherData.current.feelslike_c}°C</p>
                 </div>
 
                 <div className='dataweather--div'>
-                    <h3>Wind</h3>
+                    <h3>Wind&nbsp;<GiWindsock size={24} /></h3>
                     <p>Direction: {weatherData.current.wind_dir}</p>
                     <p>Speed: {weatherData.current.wind_kph} km/h</p>
                     <p>Degree: {weatherData.current.wind_degree}°</p>
                 </div>
 
                 <div className='dataweather--div'>
-                    <h3>Precipitations</h3>
+                    <h3>Precipitations&nbsp;<BsCloudRain size={24} /></h3>
                     <p>Humidity: {weatherData.current.humidity} %</p>
                     <p>Millimeters: {weatherData.current.precip_mm} mm</p>
                     <p>Pressure: {weatherData.current.pressure_mb} mb</p>
                 </div>
 
                 <div className='dataweather--div dataweather--middle'>
-                    <h3>Air Quality</h3>
+                    <h3>Air Quality&nbsp;<GiWindTurbine size={24} /></h3>
                     <p>CO: {weatherData.current.air_quality.co}</p>
                     <p>NO2: {weatherData.current.air_quality.no2}</p>
                     <p>03: {weatherData.current.air_quality.o3}</p>
