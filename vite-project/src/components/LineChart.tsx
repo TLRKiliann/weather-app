@@ -9,7 +9,14 @@ import {
     Legend,
   } from 'chart.js';
   import { Line } from 'react-chartjs-2';
-  
+  import db_data from '../services/db_data'
+
+  const tempVal = db_data.map((m) => m.temp)
+  console.log(tempVal, "db_data")
+
+  const windVal = db_data.map((m) => m.wind)
+  console.log(windVal, "db_data")
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -78,7 +85,7 @@ import {
     datasets: [
       {
         label: 'Temperatures(C°)',
-        data: [10,7,10,4,14,6],
+        data: tempVal,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.3)',
         pointBorderColor: 'salmon',
@@ -87,7 +94,7 @@ import {
       },
       {
         label: 'Wind',
-        data: [9, 7, 11, 16, 10, 11],
+        data: windVal,
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.3)',
         pointBorderColor: 'deepskyblue',
@@ -99,7 +106,6 @@ import {
   
 
 function LineChart() {
-
   return (
     <section className="lineChart">
 
