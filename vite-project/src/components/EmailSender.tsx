@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import submitForm from './SubmitForm'
+//import submitForm from './SubmitForm'
+
 
 type ErrorType = {
   message: string;
@@ -32,17 +33,36 @@ export default function EmailSender() {
     setTextMsg(e.target.value)
   }
 
+  const apiKey = "c3d24243b3354d83a5e7f7bce74715aa"
+  const apiURL = `https://emailvalidation.abstractapi.com/v1/?api_key=${apiKey}&email=philogenie@protonmail.com`
+
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>,
     textMsg: string, email: string, fullname: string) => {
       e.preventDefault()
       setStatus('submitted')
+      try {
+        const response = await fetch(apiURL + '&email=' + email);
+        const data = await response.json();
+        const isValidSMTP = data.is_smtp_valid.value;
+        if (isValidSMTP) {
+          console.log("+ Cool !!!: ", isValidSMTP)
+        } else {
+          console.log("+ Ho no an error occured")
+        }
+        setStatus('success')
+        console.log(data)
+      } catch (err: unknown | null) {
+        setStatus('typing')
+        setError(err as ErrorType);
+      }
+      /*setStatus('submitted')
       try {
         await submitForm({fullname, email, textMsg})
         setStatus('success')
       } catch (err: unknown | null) {
         setStatus('typing')
         setError(err as ErrorType)
-      }
+      }*/
   }
 
   return (
@@ -85,7 +105,7 @@ export default function EmailSender() {
           />
         
           <button type="submit" className='form--btn'>Send</button>
-
+          <a href="mailto:philogenie@protonmail.com">Click to Send an Email</a>
           <span className='form--error'>
             {error !== null ? (
               <p>{error?.message}</p>
