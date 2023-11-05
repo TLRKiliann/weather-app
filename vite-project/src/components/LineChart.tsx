@@ -12,10 +12,10 @@ import {
   import db_data from '../services/db_data'
 
   const tempVal = db_data.map((m) => m.temp)
-  console.log(tempVal, "db_data")
+  //console.log(tempVal, "db_data")
 
   const windVal = db_data.map((m) => m.wind)
-  console.log(windVal, "db_data")
+  //console.log(windVal, "db_data")
 
   ChartJS.register(
     CategoryScale,
@@ -35,7 +35,7 @@ import {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top' as const,
+        position: 'bottom' as const,
         labels: {
           color: "sandybrown",
           font: {
@@ -49,7 +49,19 @@ import {
         color: "sandybrown",
         font: {
           size: 22
+        },
+        padding: {
+          top: 20, 
+          bottom: 20
         }
+      },
+    },
+    layout: {
+      padding: {               
+        top: 0,
+        right: 15,
+        bottom: 10,
+        left: 15
       },
     },
     scales: {
@@ -84,7 +96,7 @@ import {
     labels,
     datasets: [
       {
-        label: 'Temperatures(C°)',
+        label: 'Temperatures (C°)',
         data: tempVal,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.3)',
@@ -93,7 +105,7 @@ import {
         borderWidth: 2,
       },
       {
-        label: 'Wind',
+        label: 'Wind (km/h)',
         data: windVal,
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.3)',
@@ -109,16 +121,18 @@ function LineChart() {
   return (
     <section className="lineChart">
 
-      <div className="lineChart--div">
+      <div className="lineChart--container">
 
-          <Line options={options} data={data} />
-      
+        <Line options={options} data={data} />
+  
       </div>
 
       <span className='lineChart--span'>
-        <a href='/output.txt' download>
+
+        <a href='/weather_data.txt' download>
           Download
         </a>
+
       </span>
 
     </section>

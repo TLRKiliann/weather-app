@@ -1,11 +1,3 @@
-type DataDbProps = {
-    id: number;
-    date: string;
-    temp: number | null;
-    wind: number | null;
-  }
-
-const db_data: DataDbProps[] = [
     {
         id: 1,
         date: "01/2023",
@@ -78,5 +70,3 @@ const db_data: DataDbProps[] = [
         temp: null,
         wind: null
     }
-]
-export default db_data
