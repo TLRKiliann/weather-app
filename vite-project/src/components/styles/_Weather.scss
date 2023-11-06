@@ -3,21 +3,11 @@
         color: $sandybrown;
     }
     &--span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 100%;
-        height: auto;
-
-        background: $black--light--opacity;
-        border: 1px solid $sandybrown;
-        border-radius: 7px;
+        @include displayAlignJustify(center);
+        @include widthHeight(100%, auto);  
+        @include bgBdBr($black--light--opacity, $sandybrown);
         &--img {
-            display: flex;
-            width: 20%;
-            height: auto;
-            object-fit: cover;
+            @include imgFormat(20%);
         }
     }
     &--uv {
@@ -26,24 +16,14 @@
 }
 
 .dataweather {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    @include displayAlignFlexJustify(row, space-between, 100%);
     &--div {
-        width: 300px;
-        height: 300px;
-        
-        background: $black--light--opacity;
-        color: $whitesmoke;
-        border: 1px solid #000;
-        
-        text-align: center;
+        @include widthHeight(300px, 300px);
+        @include textAlignColor($whitesmoke);
+        @include bgPlusOptions($black--light--opacity, border, 1px solid $black);
         h3 {
-            text-align: center;
+            @include textAlignColor($sandybrown);
             margin-bottom: 40px;
-            color: $sandybrown;
         }
     }
 }

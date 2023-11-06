@@ -4,9 +4,9 @@ import DateHour from './components/DateHour'
 import LineChart from "./components/LineChart"
 import AlertSection from './components/AlertSection'
 import EmailSender from './components/EmailSender'
+import { DataProps } from './models/types'
 import meteo from '/images/meteo.jpg'
 import apiLogo from '/images/weatherapi_logo.jpg'
-import { DataProps } from './models/types'
 
 function App() {
 

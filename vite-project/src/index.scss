@@ -27,13 +27,8 @@ body {
 }
 
 header {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  
-  background-color: $black--light--opacity;
-  box-shadow: 0px 0px 7px $light--sandybrown;
+  @include positionFixAbs(absolute);
+  @include bgPlusOptions($black--light--opacity, box-shadow, 0px 0px 7px $light--sandybrown);
 }
 
 h1 {
@@ -43,14 +38,10 @@ h1 {
 }
 
 section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+  @include displayAlignJustify(space-between);
   width: 80%;
   margin: auto;
   padding: 20px;
-
   background-color: $black--opacity;
 }
 
@@ -64,20 +55,13 @@ footer {
   position: absolute;
   right: 0px;
   left: 0px;
-  display: flex;
-  justify-content: center;
-
-  background-color: $black--light--opacity;
-  box-shadow: 0px 0px 7px $light--sandybrown;
+  @include displayJustify();
+  @include bgPlusOptions($black--light--opacity, box-shadow, 0px 0px 7px $light--sandybrown);
   padding: 10px 0px;
   .apilogo {
-    width: 10%;
-    height: auto;
+    @include widthHeight(10%, auto);  
     &--img {
-      display: flex;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+      @include imgFormat(100%);
     }
   }
 }

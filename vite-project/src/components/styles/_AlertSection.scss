@@ -4,8 +4,7 @@
         color: $sandybrown;
     }
     &--container {
-        display: flex;
-        justify-content: center;
+        @include displayJustify();
         width: 80%;
     }
     &--box {

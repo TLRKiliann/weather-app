@@ -127,13 +127,13 @@ function LineChart() {
   
       </div>
 
-      <span className='lineChart--span'>
+      <a className='lineChart--a' href='/weather_data.txt' download>
 
-        <a href='/weather_data.txt' download>
+        <span>
           Download
-        </a>
+        </span>
 
-      </span>
+      </a>
 
     </section>
   )

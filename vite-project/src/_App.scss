@@ -1,19 +1,13 @@
+@use 'src/styles/mixin' as *;
 @use 'src/styles/colors' as *;
 
 .img--span {
-    position: fixed;
-    top: 0px;
-    right: 0px;
+    @include positionFixAbs(fixed);
     bottom: 0px;
-    left: 0px;
-    /*filter: opacity(90%);*/
     z-index: -1;
     &--meteo {
-        display: flex;
-        width: 100%;
-        height: auto;
+        @include imgFormat(100%);
         opacity: 0.8;
-        object-fit: cover;
     }
 }
 
@@ -21,7 +15,6 @@
     &--h1 {
         color: $whitesmoke;
         text-shadow: 5px 0px 1px $grey;
-
         padding: 20px 0px;
     }
 }
@@ -31,8 +24,6 @@ hr {
 }
 
 .dataweather--section {
-    display: flex;
-    flex-direction: column;
-    border-radius: 7px;
+    @include displayFlexDir();
     background-color: $black--opacity;
 }

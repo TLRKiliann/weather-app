@@ -1,86 +1,38 @@
 .email {
-    display: flex;
-    flex-direction: column;
-
-    border-radius: 7px;
+    @include displayFlexDir();
     margin-bottom: 40px;
     &--title {
         width: 100%;
         color: $sandybrown;
     }
     &--divform {
-        display: flex;
-        justify-content: center;
+        @include displayJustify();
         width: 100%;
         .form {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 80%;
+            @include displayAlignFlexJustify(column, space-between, 80%);
             &--label {
-                width: 50%;
-
-                font-size: 1.2rem;
-                color: $whitesmoke;
-
-                margin: auto;
-                margin-bottom: 10px;
-                padding: 7px 0px;
+                @include widthMarBFontSizeColorPad(50%, $whitesmoke, 7px 0px);
             }
             &--input {
-                width: 48%;
-                margin: auto;
-                margin-bottom: 10px;
-                
-                font-size: 1.2rem;
-                color: $sandybrown;
-
-                background: $white--opacity--light;
-                border: none;
-                outline: none;
-                border-radius: 5px;
-                box-shadow: 0px 0px 10px $sandybrown;
-                
-                padding: 7px 10px;
+                @include widthMarBFontSizeColorPad(48%, $sandybrown, 7px 10px);
+                @include bgBdOutBrBoxShadow();
             }
             &--textarea {
-                width: 47%;
-                margin: auto;
-                
-                font-size: 1.1rem;
-                color: $whitesmoke;
-
-                background: $white--opacity--light;
-                border: none;
-                outline: none;
-                box-shadow: 0px 0px 10px $sandybrown;
-                
-                padding: 10px;
+                @include fontSizeColor(47%, font-size, 1.1rem, $whitesmoke, auto, 10px);
+                @include bgBdOutBrBoxShadow();
             }
             &--btn {
-                width: 50%;
-
-                background: $black--opacity;
-                border: 1px solid $light--sandybrown;
-                border-radius: 7px;
-
-                font-weight: 600;
-                color: $sandybrown;
-
-                margin: 20px auto;
-                padding: 12px;
+                @include fontSizeColor(50%, font-weight, 600, $sandybrown, 20px auto, 12px);
+                @include bgBdBr($black--opacity, $light--sandybrown);
                 transition: ease 0.5s;
                 &:hover {
-                    background: $sandybrown;
-                    color: $black--42;
+                    @include bgPlusOptions($sandybrown, color, $black--42);
                 }
             }
             &--error {
                 width: 50%;
                 margin: auto;
-                background-color: $salmon;
-                color: $whitesmoke;
+                @include bgPlusOptions($salmon, color, $whitesmoke);                
                 p {
                     text-align: center;
                 }
