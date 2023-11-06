@@ -1,0 +1,91 @@
+@mixin positionFixAbs($position) {
+    position: $position;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+@mixin displayAlignJustify($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin displayAlignFlexJustify($flex, $justify, $width) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flex;
+    justify-content: $justify;
+    width: $width;
+}
+
+@mixin displayFlexDir() {
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+}
+
+@mixin displayJustify() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin fontSizeColor($width, $fontParams, $fontVal, $color, $margin, $padding) {
+    width: $width;
+    #{$fontParams}: $fontVal;
+    color: $color;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin textAlignColor($color) {
+    text-align: center;
+    color: $color;
+}
+
+@mixin bgBdBr($bg, $bd) {
+    background: $bg;
+    border: $bd;
+    border-radius: 7px;
+}
+
+@mixin widthMarBFontSizeColorPad($width, $color, $padding) {
+    width: $width;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: $color;
+    padding: $padding;
+}
+
+@mixin bgBdOutBrBoxShadow() {
+    background: $white--opacity--light;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px $sandybrown;
+}
+
+@mixin bgBdBr($bg, $border) {
+    background: $bg;
+    border: $border;
+    border-radius: 7px;
+}
+
+@mixin bgPlusOptions($bgColor, $option, $params) {
+    background-color: $bgColor;
+    #{$option}: $params;
+}
+
+@mixin imgFormat($width) {
+    display: flex;
+    width: $width;
+    height: auto;
+    object-fit: cover;
+}
+

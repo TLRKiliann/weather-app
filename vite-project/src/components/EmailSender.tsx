@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import submitForm from './SubmitForm'
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 type ErrorType = {
   message: string;
@@ -7,22 +7,12 @@ type ErrorType = {
 
 export default function EmailSender() {
   
-  const [fullname, setFullname] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [textMsg, setTextMsg] = useState<string>("")
 
   const [status, setStatus] = useState<string>('typing')
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState<null | ErrorType>(null)
-
-  if (status === 'success') {
-    return <section className='email'>
-        <h2>Message sent successfully !</h2>
-      </section>
-  }
-
-  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFullname(e.target.value)
-  }
 
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -32,17 +22,35 @@ export default function EmailSender() {
     setTextMsg(e.target.value)
   }
 
+  useEffect(() => emailjs.init("pYn8mwx4gUgfZdxb6"), []);
+
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>,
-    textMsg: string, email: string, fullname: string) => {
+    email: string, textMsg: string) => {
       e.preventDefault()
       setStatus('submitted')
+      const serviceId = "service_3e83iqh";
+      const templateId = "template_2dbog9h";
       try {
-        await submitForm({fullname, email, textMsg})
+        setLoading(true);
         setStatus('success')
-      } catch (err: unknown | null) {
+        await emailjs.send(serviceId, templateId, {
+          name: email,
+          recipient: textMsg
+        });
+      } catch (err) {
         setStatus('typing')
         setError(err as ErrorType)
+      } finally {
+        setLoading(false);
       }
+  }
+
+  console.log(loading, "loading")
+
+  if (status === 'success') {
+    return <section className='email'>
+        <h2>Message sent successfully !</h2>
+      </section>
   }
 
   return (
@@ -54,37 +62,32 @@ export default function EmailSender() {
 
       <div className='email--divform'>
         <form 
-          onSubmit={(e) => handleSubmit(e, fullname, email, textMsg)}
+          onSubmit={(e) => handleSubmit(e, email, textMsg)}
           className='form'>
-
-          <label htmlFor="fullname" className='form--label'>Fullname :</label>
-
-          <input id="fullname" name="fullname" className='form--input' type="text"
-            value={fullname} onChange={(e) => handleChangeName(e)} 
-            placeholder='fullname'
-          />
 
           <label htmlFor="email" className='form--label'>Email :</label>
 
-          <input id="email" name="email" className='form--input' type="email" 
-            value={email} onChange={(e) => handleChangeEmail(e)} 
+          <input id="email" name="email" className='form--input' type="email"
+            value={email}
+            onChange={(e) => handleChangeEmail(e)} 
             placeholder='email'  
           />
 
           <label htmlFor="textarea" className='form--label'>
-            Leave a comment or suggestions :
+            Comment :
           </label>
+
           <textarea
             id="textarea"
             name="textarea"
-            className='form--textarea'
             value={textMsg}
+            className='form--textarea'
             onChange={(e) => handleTextarea(e)}
             cols={80} rows={10} 
-            placeholder="email" 
+            placeholder="Leave me a comment..." 
           />
         
-          <button type="submit" className='form--btn'>Send</button>
+          <button type="submit" className='form--btn' disabled={loading}>Send</button>
 
           <span className='form--error'>
             {error !== null ? (

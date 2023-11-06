@@ -1,0 +1,29 @@
+.forecast {
+    &--title {
+        color: $sandybrown;
+    }
+    &--span {
+        @include displayAlignJustify(center);
+        @include widthHeight(100%, auto);  
+        @include bgBdBr($black--light--opacity, $sandybrown);
+        &--img {
+            @include imgFormat(20%);
+        }
+    }
+    &--uv {
+        text-align: center;
+    }
+}
+
+.dataweather {
+    @include displayAlignFlexJustify(row, space-between, 100%);
+    &--div {
+        @include widthHeight(300px, 300px);
+        @include textAlignColor($whitesmoke);
+        @include bgPlusOptions($black--light--opacity, border, 1px solid $black);
+        h3 {
+            @include textAlignColor($sandybrown);
+            margin-bottom: 40px;
+        }
+    }
+}

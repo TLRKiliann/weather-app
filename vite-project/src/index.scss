@@ -2,17 +2,16 @@
 @import './styles/_mixin.scss';
 @import './styles/_colors.scss';
 @import './components/styles/_AlertSection.scss';
-@import './components/styles/_DataWeather.scss';
 @import './components/styles/_DateHour.scss';
 @import './components/styles/_EmailSender.scss';
-@import './components/styles/_SonarStorm.scss';
 @import './components/styles/_LineChart.scss';
+@import './components/styles/_Weather.scss';
 
 :root {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
 
-  color: #f5f5f5;
+  color: $whitesmoke;
   background: deepskyblue;
 
   text-rendering: optimizeLegibility;
@@ -28,13 +27,8 @@ body {
 }
 
 header {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  
-  background-color: rgba(0, 70, 250, 0.5);
-  box-shadow: 0px 0px 7px #f5f5f5;
+  @include positionFixAbs(absolute);
+  @include bgPlusOptions($black--light--opacity, box-shadow, 0px 0px 7px $light--sandybrown);
 }
 
 h1 {
@@ -44,17 +38,11 @@ h1 {
 }
 
 section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+  @include displayAlignJustify(space-between);
   width: 80%;
   margin: auto;
   padding: 20px;
-
-  background-color: rgba(0, 70, 250, 0.5);
-  box-shadow: 0px 0px 7px #f5f5f5;
-  color: #f5f5f5;
+  background-color: $black--opacity;
 }
 
 p {
@@ -67,9 +55,13 @@ footer {
   position: absolute;
   right: 0px;
   left: 0px;
-  
-  text-align: center;
-
-  background-color: rgba(0, 70, 250, 0.5);
-  box-shadow: 0px 0px 7px #f5f5f5;
+  @include displayJustify();
+  @include bgPlusOptions($black--light--opacity, box-shadow, 0px 0px 7px $light--sandybrown);
+  padding: 10px 0px;
+  .apilogo {
+    @include widthHeight(10%, auto);  
+    &--img {
+      @include imgFormat(100%);
+    }
+  }
 }
