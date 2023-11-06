@@ -57,7 +57,7 @@ export default function EmailSender() {
     <section className='email'>
 
       <div className='email--title'>
-        <h2>Email</h2>
+        <h2>Em@il</h2>
       </div>
 
       <div className='email--divform'>
@@ -65,7 +65,7 @@ export default function EmailSender() {
           onSubmit={(e) => handleSubmit(e, email, textMsg)}
           className='form'>
 
-          <label htmlFor="email" className='form--label'>Email :</label>
+          <label htmlFor="email" className='form--label'>Your email :</label>
 
           <input id="email" name="email" className='form--input' type="email"
             value={email}
@@ -74,7 +74,7 @@ export default function EmailSender() {
           />
 
           <label htmlFor="textarea" className='form--label'>
-            Comment :
+            Your comment :
           </label>
 
           <textarea

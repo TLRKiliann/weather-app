@@ -26,7 +26,7 @@ export default function DateHour() {
                     {year}
                 </p>
 
-                <p className="time--p time--r">Local Time:&nbsp;
+                <p className="time--p time--r">Time:&nbsp;
                     {timing && timing.toLocaleTimeString()}
                 </p>
                 

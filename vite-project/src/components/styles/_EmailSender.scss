@@ -23,10 +23,13 @@
             }
             &--btn {
                 @include fontSizeColor(50%, font-weight, 600, $sandybrown, 20px auto, 12px);
-                @include bgBdBr($black--opacity, $light--sandybrown);
+                @include bgBdBr($black--opacity, 1px solid $light--sandybrown);
                 transition: ease 0.5s;
                 &:hover {
                     @include bgPlusOptions($sandybrown, color, $black--42);
+                }
+                &:active {
+                    @include bgPlusOptions($salmon, color, $lightgreen);
                 }
             }
             &--error {

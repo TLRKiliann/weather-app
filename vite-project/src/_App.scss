@@ -13,9 +13,10 @@
 
 .maintitle { 
     &--h1 {
-        color: $whitesmoke;
+        @include textAlignColor($whitesmoke);
+        font-size: 2.2rem;        
         text-shadow: 5px 0px 1px $grey;
-        padding: 20px 0px;
+        @include marginPad(margin, auto, 20px 0px);
     }
 }
 
@@ -26,4 +27,37 @@ hr {
 .dataweather--section {
     @include displayFlexDir();
     background-color: $black--opacity;
+}
+
+footer {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    @include displayAlignFlexJustify(row, space-between, 100%);
+    @include bgPlusOptions($black--light--opacity, box-shadow, 0px 0px 7px $light--sandybrown);
+    color: $sandybrown;
+    padding: 10px 0px;
+    .apilogo {
+        @include widthHeight(100px, auto);  
+        margin: 0px 20px;
+        filter: sepia(20%);
+        &--img {
+            @include imgFormat(100%);
+        }
+    }
+    .webdev {
+        margin: 0px 20px;
+        &--legend {
+            font-style: italic;
+        }
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .maintitle {
+        &--h1 {
+            font-size: 1.4rem;
+            text-shadow: 0px 0px 0px $grey;
+        }
+    }
 }
