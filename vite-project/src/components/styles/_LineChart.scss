@@ -6,11 +6,10 @@
         @include bgBdBr($black--light--opacity, $black);
     }
     &--a {
-        margin-top: 20px;
-        @include bgBdBr($black--opacity, $light--sandybrown);
+        @include bgBdBr($black--opacity, 1px solid $light--sandybrown);
         text-decoration: none;
         color: $sandybrown;
-        padding: 10px 30px;
+        @include marginPad(margin-top, 20px, 10px 30px);
         transition: ease 0.5s;
         span {
             color: $sandybrown; 
@@ -21,6 +20,12 @@
                 margin: auto;
                 color: $black--42; 
             }
+        }
+        &:active {
+            background: $salmon;
+            span {
+                color: $lightgreen; 
+            } 
         }
     }
 }

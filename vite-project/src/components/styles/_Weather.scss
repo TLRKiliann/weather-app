@@ -1,13 +1,14 @@
 .forecast {
     &--title {
+        text-align: center;
         color: $sandybrown;
     }
     &--span {
         @include displayAlignJustify(center);
-        @include widthHeight(100%, auto);  
-        @include bgBdBr($black--light--opacity, $sandybrown);
+        @include widthHeight(200px, auto);  
+        @include bgBdBr($black--light--opacity, none);
         &--img {
-            @include imgFormat(20%);
+            @include imgFormat(100%);
         }
     }
     &--uv {
@@ -18,12 +19,45 @@
 .dataweather {
     @include displayAlignFlexJustify(row, space-between, 100%);
     &--div {
-        @include widthHeight(300px, 300px);
+        @include widthHeight(100%, 300px);
         @include textAlignColor($whitesmoke);
-        @include bgPlusOptions($black--light--opacity, border, 1px solid $black);
-        h3 {
+        @include bgPlusOptions($black--light--opacity, border-right, 1px solid $black);
+        padding-top: 20px;
+        &:nth-child(4) {
+            border-right: none;
+        }
+        .titles {
+            @include displayAlignJustify(center);
+            @include textAlignColor($sandybrown);
+            margin-bottom: 20px;
+            &--h3 {
+                margin-right: 10px;
+            }
+        }
+        .paragraph {
+            text-align: left;
+            padding-left: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .dataweather {
+        @include displayAlignFlexJustify(column, space-between, 100%);
+        &--div {
+            @include widthHeight(100%, 240px);
+            @include textAlignColor($whitesmoke);
+            @include bgPlusOptions($black--light--opacity, border-left, 1px solid $black);
+            padding-top: 20px;
+        }
+        .titles {
+            @include displayAlignJustify(center);
             @include textAlignColor($sandybrown);
             margin-bottom: 40px;
+        }
+        .paragraph {
+            text-align: center;
+            padding-left: 0px;
         }
     }
 }

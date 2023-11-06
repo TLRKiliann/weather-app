@@ -11,10 +11,10 @@
     justify-content: $justify;
 }
 
-@mixin displayAlignFlexJustify($flex, $justify, $width) {
+@mixin displayAlignFlexJustify($flex-dir, $justify, $width) {
     display: flex;
     align-items: center;
-    flex-direction: $flex;
+    flex-direction: $flex-dir;
     justify-content: $justify;
     width: $width;
 }
@@ -41,6 +41,11 @@
     color: $color;
     margin: $margin;
     padding: $padding;
+}
+
+@mixin fontSW($size) {
+    font-size: $size;
+    font-weight: 600;
 }
 
 @mixin textAlignColor($color) {
@@ -80,6 +85,11 @@
 @mixin bgPlusOptions($bgColor, $option, $params) {
     background-color: $bgColor;
     #{$option}: $params;
+}
+
+@mixin marginPad($margin, $params, $padding) {
+    #{$margin}: $params;
+    padding: $padding;
 }
 
 @mixin imgFormat($width) {

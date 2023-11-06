@@ -11,9 +11,8 @@
         text-align: center;
         margin-right: 10%;
         span {
-            font-size: 2rem;
-            font-weight: 600;
-            color: orangered;
+            @include fontSW(2rem);
+            color: $orangered;
         }
     }
 }

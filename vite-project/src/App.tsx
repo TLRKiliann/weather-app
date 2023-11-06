@@ -86,6 +86,9 @@ function App() {
             alt="logo of API"
             className='apilogo--img' />
         </span>
+        <span className="webdev">
+          <legend className="webdev--legend">Cédric Kuchen</legend>
+        </span>
       </footer>
 
     </>

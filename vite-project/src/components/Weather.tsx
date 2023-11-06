@@ -33,33 +33,45 @@ export default function Weather({weatherData}: WeatherProps) {
             <div className="dataweather">
 
                 <div className='dataweather--div'>
-                    <h3>Location&nbsp;<BiCurrentLocation size={24} /></h3>
-                    <p>City: {weatherData.location.name}</p>
-                    <p>Country: {weatherData.location.country}</p>
-                    <p><FaTemperatureHigh />: {weatherData.current.temp_c}°C</p>
-                    <p>Feels like: {weatherData.current.feelslike_c}°C</p>
+                    <span className="titles">
+                        <h3 className="titles--h3">Location</h3>
+                        <BiCurrentLocation size={24} />
+                    </span>
+                    <p className="paragraph">City: {weatherData.location.name}</p>
+                    <p className="paragraph">Country: {weatherData.location.country}</p>
+                    <p className="paragraph"><FaTemperatureHigh />: {weatherData.current.temp_c}°C</p>
+                    <p className="paragraph">Feels like: {weatherData.current.feelslike_c}°C</p>
                 </div>
 
                 <div className='dataweather--div'>
-                    <h3>Wind&nbsp;<GiWindsock size={24} /></h3>
-                    <p>Direction: {weatherData.current.wind_dir}</p>
-                    <p>Speed: {weatherData.current.wind_kph} km/h</p>
-                    <p>Degree: {weatherData.current.wind_degree}°</p>
+                    <span className="titles">
+                        <h3 className="titles--h3">Wind</h3>
+                        <GiWindsock size={24} />
+                    </span>
+                    <p className="paragraph">Direction: {weatherData.current.wind_dir}</p>
+                    <p className="paragraph">Speed: {weatherData.current.wind_kph} km/h</p>
+                    <p className="paragraph">Degree: {weatherData.current.wind_degree}°</p>
                 </div>
 
                 <div className='dataweather--div'>
-                    <h3>Precipitations&nbsp;<BsCloudRain size={24} /></h3>
-                    <p>Humidity: {weatherData.current.humidity} %</p>
-                    <p>Millimeters: {weatherData.current.precip_mm} mm</p>
-                    <p>Pressure: {weatherData.current.pressure_mb} mb</p>
+                    <span className="titles">
+                        <h3 className="titles--h3">Precipitations</h3>
+                        <BsCloudRain size={24} />
+                    </span>
+                    <p className="paragraph">Humidity: {weatherData.current.humidity} %</p>
+                    <p className="paragraph">Millimeters: {weatherData.current.precip_mm} mm</p>
+                    <p className="paragraph">Pressure: {weatherData.current.pressure_mb} mb</p>
                 </div>
 
                 <div className='dataweather--div dataweather--middle'>
-                    <h3>Air Quality&nbsp;<GiWindTurbine size={24} /></h3>
-                    <p>CO: {weatherData.current.air_quality.co}</p>
-                    <p>NO2: {weatherData.current.air_quality.no2}</p>
-                    <p>03: {weatherData.current.air_quality.o3}</p>
-                    <p>SO2: {weatherData.current.air_quality.so2}</p>
+                    <span className="titles">
+                        <h3 className="titles--h3">Air Quality</h3>
+                        <GiWindTurbine size={24} />
+                    </span>
+                    <p className="paragraph">CO: {weatherData.current.air_quality.co}</p>
+                    <p className="paragraph">NO2: {weatherData.current.air_quality.no2}</p>
+                    <p className="paragraph">03: {weatherData.current.air_quality.o3}</p>
+                    <p className="paragraph">SO2: {weatherData.current.air_quality.so2}</p>
                 </div>
 
             </div>
