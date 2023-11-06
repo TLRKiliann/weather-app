@@ -33,9 +33,6 @@ export default function EmailSender() {
     setTextMsg(e.target.value)
   }
 
-  const apiKey = "c3d24243b3354d83a5e7f7bce74715aa"
-  const apiURL = `https://emailvalidation.abstractapi.com/v1/?api_key=${apiKey}&email=philogenie@protonmail.com`
-
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>,
     textMsg: string, email: string, fullname: string) => {
       e.preventDefault()
