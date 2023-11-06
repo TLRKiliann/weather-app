@@ -1,27 +1,27 @@
-# React + TypeScript + Vite
+# Weather in Lausanne
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single One Page (SPA) with ViteJS - TypeScript - SCSS
 
-Currently, two official plugins are available:
+## Motivation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+J'ai voulu créer une SPA avec plusieurs fonctionnalités, tels que le download d'un fichier, utiliser chartJS, envoyer un email, etc.
 
-## Expanding the ESLint configuration
+Il s'agit d'une webapp de météo de la ville de Lausanne.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Cette application comprend :
 
-- Configure the top-level `parserOptions` property like this:
+- Date & heure en temps réel
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Un appel API pour afficher les données météo depuis WeatherAPI.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- ChartJS : un graphique de la température et du vent.
+
+- Download : un simple fichier que l'on peut télécharger avec dates, températures et vends.
+
+- Email : n'importe qui peut m'envoyer un email.
+
+---
+
+Enjoy !
+
+ko@l@tr33 :koala:
