@@ -26,12 +26,13 @@ function App() {
       .then((res) => res.json())
       .then((rslt) => {
         setData(rslt)
-        console.log(rslt)
         setLoading(false)
       })
     }
     fetchData();
   }, [])
+
+  console.log("loading", loading);
 
   return (
     <>
@@ -51,10 +52,6 @@ function App() {
       
       <DateHour />
       <hr />
-
-      {loading === true ? (
-        <p>Loadding</p>
-      ): null }
 
       <section className='dataweather--section'>
         {(typeof data?.location != 'undefined') ? (
