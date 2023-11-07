@@ -3,3 +3,6 @@ env/
 /bin/
 /lib/
 /pyvenv.cfg
+
+# Local Netlify folder
+.netlify
